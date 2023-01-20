@@ -9,7 +9,13 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 if(number > 99 || number < -99 )
 {
-    int thirdDigit = number % 1000 / 100;
+    //int thirdDigit = (number % 1000) / 100; //выделяем третью цифру с права 
+    
+    //Выделяем третью цифру с лева
+    int thirdDigit = number;
+    while(thirdDigit > 999 || thirdDigit < -999) thirdDigit /= 10; 
+    thirdDigit = thirdDigit % 10;
+
     Console.WriteLine($"Третья цифра числа {number} равна {thirdDigit}.");
 }
 else
